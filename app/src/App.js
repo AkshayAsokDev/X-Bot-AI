@@ -13,11 +13,12 @@ function App() {
 
           <Navbar />
 
-          <Stack spacing={2}>
+          <Stack spacing={2}
+          >
               <Outlet />
               <Searchbar />
           </Stack>
-          
+
       </Stack>
 
     </div>

@@ -1,3 +1,4 @@
+import { Box, Typography } from "@mui/material"
 
 
 
@@ -5,8 +6,8 @@
 export default function ChatWindow() {
 
     return (
-        <div>
-            Chat window
-        </div>
+        <Box>
+            <Typography>ChatWindow</Typography>
+        </Box>
     )
 }

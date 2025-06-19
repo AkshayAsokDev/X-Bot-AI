@@ -5,6 +5,8 @@ import App from './App';
 import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import ConversationHistory from './pages/history';
 import ChatWindow from './pages/home';
+import { ThemeProvider, createTheme } from '@mui/material';
+
 
 
 const router = createBrowserRouter([{
@@ -23,11 +25,29 @@ const router = createBrowserRouter([{
   ]
 }])
 
+const theme = createTheme({
+
+  typography: {
+    fontFamily: `"Ubuntu", "Open Sans", sans-serif`
+  },
+  palette: {
+    primary: {
+      main: "#9785BA",
+      light: "#AF9FCD",
+      contrastText: "black"
+    }
+  }
+
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    
+    <ThemeProvider theme={theme}>
+        <RouterProvider router={router} />
+    </ThemeProvider>
+    
   </React.StrictMode>
 );
 
