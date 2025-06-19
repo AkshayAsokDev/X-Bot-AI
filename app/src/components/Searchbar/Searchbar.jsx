@@ -11,6 +11,7 @@ export default function Searchbar() {
                 <TextField variant="outlined" placeholder="Message Bot AI…" />
 
                 <Button variant="contained"
+                color="secondary"
                 type="submit"
                 sx={{
                     fontSize: "1.5rem"
@@ -18,6 +19,7 @@ export default function Searchbar() {
                 >Ask</Button>
                 
                 <Button variant="contained"
+                color="secondary"
                 type="button"
                 sx={{
                     fontSize: "1.5rem"
