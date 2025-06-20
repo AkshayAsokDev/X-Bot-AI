@@ -15,7 +15,7 @@ function App() {
 
           <Stack spacing={2}
           sx={{
-            width: "70%",
+            width: "80%",
             height: "100vh",
             backgroundColor: "#f5f2fb",
           }}
