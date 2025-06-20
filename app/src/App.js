@@ -14,6 +14,11 @@ function App() {
           <Navbar />
 
           <Stack spacing={2}
+          sx={{
+            width: "70%",
+            height: "100vh",
+            backgroundColor: "#f5f2fb",
+          }}
           >
               <Outlet />
               <Searchbar />

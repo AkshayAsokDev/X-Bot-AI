@@ -6,7 +6,11 @@ import { Box, Typography } from "@mui/material"
 export default function ChatWindow() {
 
     return (
-        <Box>
+        <Box
+        sx={{
+            flexGrow: 1,
+        }}
+        >
             <Typography>ChatWindow</Typography>
         </Box>
     )

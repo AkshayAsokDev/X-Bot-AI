@@ -1,14 +1,19 @@
 import { Box, TextField, Button, Stack } from "@mui/material"
-
+import styles from "./Searchbar.module.css"
 
 export default function Searchbar() {
 
     return (
         <Box>
 
-            <form>
+            <form className={styles.searchForm}>
 
-                <TextField variant="outlined" placeholder="Message Bot AI…" />
+                <TextField variant="outlined" placeholder="Message Bot AI…" 
+                sx={{
+                    width: "80%",
+                    backgroundColor: "#ffffff"
+                }}
+                />
 
                 <Button variant="contained"
                 color="secondary"
