@@ -74,7 +74,11 @@ export default function ConversationHistory() {
 
             </Stack>
 
-            <Stack spacing={2}>
+            <Stack spacing={2}
+            sx={{
+                marginBottom: "10px"
+            }}
+            >
 
                 {
                     dummyConvoHistory.map((item, index) => {
