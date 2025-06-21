@@ -14,10 +14,12 @@ function App() {
   // console.log("isMobile >> ", isMobile);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  
+
   const outletData = {
     isMobile,
     menuOpen,
-    setMenuOpen
+    setMenuOpen,
   };
 
   return (

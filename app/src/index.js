@@ -6,6 +6,10 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom"
 import ConversationHistory from './pages/history';
 import ChatWindow from './pages/home';
 import { ThemeProvider, createTheme } from '@mui/material';
+import Modal from "react-modal"
+
+// set modal root
+Modal.setAppElement("#root");
 
 
 

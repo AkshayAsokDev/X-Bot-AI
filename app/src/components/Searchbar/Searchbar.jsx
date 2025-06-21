@@ -1,10 +1,21 @@
 import { Box, TextField, Button, Stack } from "@mui/material"
 import styles from "./Searchbar.module.css"
+import { useState } from "react"
+
+
+import FeedbackModal from "../FeedbackModal/FeedbackModal";
 
 export default function Searchbar() {
 
+    const [isOpen, setIsOpen] = useState(false);
+
+
     return (
-        <Box>
+        <Box
+        sx={{
+            display: "block",
+        }}
+        >
 
             <form className={styles.searchForm}>
 
@@ -29,7 +40,12 @@ export default function Searchbar() {
                 sx={{
                     fontSize: "1.5rem"
                 }}
+                onClick={() => {
+                    setIsOpen(true);
+                }}
                 >Save</Button>
+
+                <FeedbackModal isOpen={isOpen} setIsOpen={setIsOpen} />
 
             </form>
 
