@@ -27,11 +27,19 @@ export default function Navbar({isMobile, menuOpen, setMenuOpen}) {
                 }}
                 >
 
-                    <Link to="/" >
+                    
                         <img src={Logo} alt="ai-logo" className={styles.logo} />
+                    
+                    <Link 
+                    to="/"
+                    component="a"
+                    style={{
+                        textDecoration: "none",
+                        color: "black"
+                    }}
+                    >
+                        <Typography variant="h6" >New Chat</Typography>
                     </Link>
-
-                    <Typography variant="h6" >New Chat</Typography>
 
                     <img src={NewChatIcon} alt="new-chat-icon" className={styles.newChat} />
 
