@@ -57,13 +57,17 @@ export default function Navbar({isMobile, menuOpen, setMenuOpen}) {
                 to="/history"
                 >Past Conversations</Button>
 
-                <IconButton
-                onClick={() => {
-                    setMenuOpen(false);
-                }}
-                >
-                    <CloseIcon />
-                </IconButton>
+                {
+                    isMobile && (
+                        <IconButton
+                        onClick={() => {
+                            setMenuOpen(false);
+                        }}
+                        >
+                            <CloseIcon />
+                        </IconButton>
+                    )
+                }
 
             </Stack>
 

@@ -11,7 +11,7 @@ import { useState } from 'react';
 function App() {
 
   const isMobile = useMediaQuery("(max-width:900px)");
-  console.log("isMobile >> ", isMobile);
+  // console.log("isMobile >> ", isMobile);
   const [menuOpen, setMenuOpen] = useState(false);
 
   const outletData = {

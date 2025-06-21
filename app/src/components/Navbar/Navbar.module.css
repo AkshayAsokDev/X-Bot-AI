@@ -21,7 +21,7 @@
 }
 
 .navbarInactive {
-    transform: translateX(-200%);
+    transform: translateX(-300%);
     /* display: none; */
     transition: transform 500ms ease;
     position: absolute;

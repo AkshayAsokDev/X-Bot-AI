@@ -16,7 +16,13 @@ export default function ChatWindow() {
             flexGrow: 1,
         }}
         >
-            <Stack direction="row" spacing={2}>
+            <Stack direction="row" spacing={2}
+            sx={{
+                padding: "5px",
+                alignItems: "center",
+                marginLeft: "20px"
+            }}
+            >
 
                 {
                     isMobile && (
@@ -30,7 +36,12 @@ export default function ChatWindow() {
                     )
                 }
                 
-                <Typography>Bot AI</Typography>
+                <Typography
+                variant="h1"
+                fontSize="3rem"
+                fontWeight="700"
+                color="primary"
+                >Bot AI</Typography>
 
             </Stack>
             
