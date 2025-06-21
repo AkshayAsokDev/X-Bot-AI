@@ -60,12 +60,12 @@ export default function ChatWindow() {
                 flexGrow: 1,
             }}
             >
-                <ChatCard 
+                {/* <ChatCard 
                 type={dummyData.type}
                 isUser={dummyData.isUser}
                 time={dummyData.time}
                 content={dummyData.content}
-                />
+                /> */}
             </Box>
             
         </Box>
