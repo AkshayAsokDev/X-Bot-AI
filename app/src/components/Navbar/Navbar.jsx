@@ -37,6 +37,9 @@ export default function Navbar({isMobile, menuOpen, setMenuOpen}) {
                         textDecoration: "none",
                         color: "black"
                     }}
+                    onClick={() => {
+                        setMenuOpen(false);
+                    }}
                     >
                         <Typography variant="h6" >New Chat</Typography>
                     </Link>
@@ -63,6 +66,9 @@ export default function Navbar({isMobile, menuOpen, setMenuOpen}) {
                 }}
                 component={Link}
                 to="/history"
+                onClick={() => {
+                    setMenuOpen(false)
+                }}
                 >Past Conversations</Button>
 
                 {
