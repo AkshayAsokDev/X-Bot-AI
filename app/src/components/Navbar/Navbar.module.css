@@ -16,4 +16,22 @@
 .navbar {
     width: 20%;
     height: 100vh;
+
+    background-color: white;
+}
+
+.navbarInactive {
+    transform: translateX(-200%);
+    /* display: none; */
+    transition: transform 500ms ease;
+    position: absolute;
+}
+
+.navbarActive {
+    position: absolute;
+    width: 80%;
+    z-index: 2;
+    /* display: block; */
+
+    transform: translateX(0);
 }

@@ -1,16 +1,16 @@
-import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material"
+import { Box, Button, Stack, Typography, IconButton } from "@mui/material"
 import Logo from "../../assets/logo.png"
 import { Link } from "react-router-dom"
 import styles from "./Navbar.module.css"
 import NewChatIcon from "../../assets/newChatIcon.png"
 import CloseIcon from "@mui/icons-material/Close";
-import MenuIcon from "@mui/icons-material/Menu";
 
-export default function Navbar() {
+
+export default function Navbar({isMobile, menuOpen, setMenuOpen}) {
 
     return (
         <Box 
-        className={styles.navbar}
+        className={[styles.navbar, menuOpen && styles.navbarActive, isMobile && styles.navbarInactive ]}
         >
             
             <Box
@@ -56,6 +56,14 @@ export default function Navbar() {
                 component={Link}
                 to="/history"
                 >Past Conversations</Button>
+
+                <IconButton
+                onClick={() => {
+                    setMenuOpen(false);
+                }}
+                >
+                    <CloseIcon />
+                </IconButton>
 
             </Stack>
 
