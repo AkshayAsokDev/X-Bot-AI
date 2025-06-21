@@ -1,7 +1,15 @@
 import { Box, Typography, IconButton, Stack } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu";
 import { useOutletContext } from "react-router-dom";
+import ChatCard from "../components/ChatCard/ChatCard";
 
+
+const dummyData = {
+    type: "chat",
+    isUser: false,
+    time: "10:33 am",
+    content: "Lorem ipsum"
+}
 
 // AI Chat
 export default function ChatWindow() {
@@ -43,7 +51,22 @@ export default function ChatWindow() {
                 color="primary"
                 >Bot AI</Typography>
 
+                
+
             </Stack>
+
+            <Box
+            sx={{
+                flexGrow: 1,
+            }}
+            >
+                <ChatCard 
+                type={dummyData.type}
+                isUser={dummyData.isUser}
+                time={dummyData.time}
+                content={dummyData.content}
+                />
+            </Box>
             
         </Box>
     )
