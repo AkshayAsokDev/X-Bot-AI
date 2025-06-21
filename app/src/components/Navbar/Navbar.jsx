@@ -1,17 +1,16 @@
-import { Box, Button, Stack, Typography } from "@mui/material"
+import { Box, Button, Stack, Typography, useMediaQuery } from "@mui/material"
 import Logo from "../../assets/logo.png"
 import { Link } from "react-router-dom"
 import styles from "./Navbar.module.css"
 import NewChatIcon from "../../assets/newChatIcon.png"
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function Navbar() {
 
     return (
         <Box 
-        sx={{
-            width: "20%",
-            height: "100vh"
-        }}
+        className={styles.navbar}
         >
             
             <Box
