@@ -293,7 +293,16 @@ function App() {
 
     return temp ? JSON.parse(temp) : []
   });
-  const [feedList, setFeedList] = useState({});
+  const [feedList, setFeedList] = useState(() => {
+    const temp = localStorage.getItem("feedlist");
+
+    return temp ? JSON.parse(temp) : {}
+  });
+  const [feedRef, setFeedRef] = useState(() => {
+    const temp = localStorage.getItem("feedkey");
+
+    return temp ? JSON.parse(temp) : 0
+  });
 
   // for auto scroll
   const bottomRef = useRef(null);
@@ -363,7 +372,20 @@ function App() {
     setConvoList([...convoList, currentConvo]);
 
   }
-  console.log("convo list >> ", convoList);
+  // console.log("convo list >> ", convoList);
+
+
+  const addFeedback = (feedback, key) => {
+    
+    setFeedRef(feedRef+1);
+
+    setFeedList({
+      ...feedList,
+      [key] : feedback
+    })
+
+  }
+  // console.log("feedlist >> ", feedList);
 
   //use effect to fetch the AI response 
   useEffect(() => {
@@ -387,7 +409,16 @@ function App() {
   useEffect(() => {
 
     localStorage.setItem("conversation", JSON.stringify(convoList));
+
   }, [convoList])
+
+  //use effect to save the feedback list
+  useEffect(() => {
+
+    localStorage.setItem("feedlist", JSON.stringify(feedList));
+    localStorage.setItem("feedkey", JSON.stringify(feedRef));
+
+  }, [feedList])
 
   return (
     <div className="App">
@@ -404,6 +435,7 @@ function App() {
               <Outlet context={outletData} />
               <Searchbar 
               addChat={addChat} fetchAIResponse={fetchAIResponse} saveConvo={saveConvo}
+              feedRef={feedRef} setFeedRef={setFeedRef} addFeedback={addFeedback}
               />
           </Stack>
 

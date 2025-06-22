@@ -6,7 +6,7 @@ import { useOutletContext } from "react-router-dom";
 
 import FeedbackModal from "../FeedbackModal/FeedbackModal";
 
-export default function Searchbar({addChat, fetchAIResponse, saveConvo}) {
+export default function Searchbar({addChat, addFeedback, saveConvo, feedRef, setFeedRef}) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState("");
@@ -76,7 +76,7 @@ export default function Searchbar({addChat, fetchAIResponse, saveConvo}) {
                 }}
                 >Save</Button>
 
-                <FeedbackModal isOpen={isOpen} setIsOpen={setIsOpen} />
+                <FeedbackModal isOpen={isOpen} setIsOpen={setIsOpen} feedRef={feedRef} addFeedback={addFeedback} />
 
             </form>
 

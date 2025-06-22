@@ -77,7 +77,9 @@ export default function ConversationHistory() {
 
             <Stack spacing={2}
             sx={{
-                marginBottom: "10px"
+                marginBottom: "10px",
+                height: "75vh",
+                overflowY: "auto",
             }}
             >
 

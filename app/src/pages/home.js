@@ -63,7 +63,7 @@ export default function ChatWindow() {
                 overflowY: "auto",
                 display: "flex",
                 flexDirection: "column",
-                height: "75vh"
+                
             }}
             >
 

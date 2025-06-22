@@ -1,12 +1,15 @@
 import Modal from "react-modal"
 import { Box, Stack, Typography, TextField, Button } from "@mui/material"
+import { useState } from "react";
 
 
+export default function FeedbackModal ({isOpen, setIsOpen, feedRef, addFeedback}) {
 
-export default function FeedbackModal ({isOpen, setIsOpen}) {
+    const [feedValue, setFeedValue] = useState("");
 
 
     const handleSubmit = () => {
+        addFeedback(feedValue, feedRef);
         setIsOpen(false);
     }
 
@@ -31,7 +34,12 @@ export default function FeedbackModal ({isOpen, setIsOpen}) {
                 fontSize="1.5rem"
                 >Provide your feedback</Typography>
 
-                <TextField multiline />
+                <TextField multiline 
+                value={feedValue}
+                onChange={(e) => {
+                    setFeedValue(e.target.value);
+                }}
+                />
 
                 <Stack direction="row"
                 sx={{
