@@ -42,7 +42,7 @@ export default function Searchbar({addChat, fetchAIResponse}) {
             }}
             >
 
-                <TextField variant="outlined" placeholder="Message Bot AI…" 
+                <TextField variant="outlined" placeholder="Message Bot AI..." 
                 sx={{
                     width: "80%",
                     backgroundColor: "#ffffff"
