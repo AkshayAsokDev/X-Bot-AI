@@ -8,6 +8,8 @@ import Grid from '@mui/material/Grid';
 
 function QuestionCard ({question}) {
 
+    const { setSearch, formRef, textRef } = useOutletContext();
+
     return (
         <Box
         sx={{
@@ -18,8 +20,23 @@ function QuestionCard ({question}) {
             margin: "15px",
             background: "white",
             gap: "10px",
+            "&:hover" : {
+                cursor: "pointer"
+            }
         }}
         className={styles.card}
+        onClick={() => {
+            setSearch(question);
+            // if(textRef.current) {
+            //     textRef.current.value = question;
+            // }
+
+            setTimeout(() => {
+                formRef.current?.requestSubmit();
+            }, 0)
+
+            
+        }}
         >
             
             <Typography
@@ -46,7 +63,7 @@ export default function Welcome () {
             flexGrow: 1,
             display: "flex",
             justifyContent: "center",
-            
+            alignItems: "flex-end"
         }}
         >
 

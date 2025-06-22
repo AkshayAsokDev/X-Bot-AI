@@ -22,6 +22,8 @@ export default function ChatWindow() {
         <Box
         sx={{
             flexGrow: 1,
+            display: "flex",
+            flexDirection: "column"
         }}
         >
             <Stack direction="row" spacing={2}

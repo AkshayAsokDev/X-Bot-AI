@@ -1,27 +1,27 @@
 import { Box, TextField, Button, Stack } from "@mui/material"
 import styles from "./Searchbar.module.css"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { useOutletContext } from "react-router-dom";
 
 
 import FeedbackModal from "../FeedbackModal/FeedbackModal";
 
-export default function Searchbar({addChat, addFeedback, saveConvo, feedRef, setFeedRef}) {
+export default function Searchbar({addChat, addFeedback, saveConvo, feedRef, setFeedRef, setSearch, search, formRef, textRef}) {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [search, setSearch] = useState("");
+    
     
 
 
     const handleFormSubmit = (e) => {
-        console.log("search submit >> ", e.target.elements.search.value)
+        // console.log("search submit >> ", search)
 
         let time = new Date();
         time = time.toLocaleTimeString('en-In', {
             hour: "numeric",
             minute: "numeric"
         })
-        console.log("time >> ", time);
+        // console.log("time >> ", time);
 
         addChat("chat", true, time, e.target.elements.search.value);
 
@@ -42,6 +42,7 @@ export default function Searchbar({addChat, addFeedback, saveConvo, feedRef, set
                 e.preventDefault();
                 handleFormSubmit(e);
             }}
+            ref={formRef}
             >
 
                 <TextField variant="outlined" placeholder="Message Bot AI..." 
@@ -54,6 +55,7 @@ export default function Searchbar({addChat, addFeedback, saveConvo, feedRef, set
                 onChange={(e) => {
                     setSearch(e.target.value);
                 }}
+                ref={textRef}
                 />
 
                 <Button variant="contained"

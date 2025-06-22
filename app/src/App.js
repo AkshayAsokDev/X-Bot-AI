@@ -303,9 +303,14 @@ function App() {
 
     return temp ? JSON.parse(temp) : 0
   });
+  
 
   // for auto scroll
   const bottomRef = useRef(null);
+
+  const [search, setSearch] = useState("");
+  const formRef = useRef(null);
+  const textRef = useRef(null);
 
   const outletData = {
     isMobile,
@@ -317,7 +322,11 @@ function App() {
     setConvoList,
     feedList,
     setFeedList,
-    bottomRef
+    bottomRef,
+    search,
+    setSearch,
+    formRef,
+    textRef
 
   };
 
@@ -436,6 +445,7 @@ function App() {
               <Searchbar 
               addChat={addChat} fetchAIResponse={fetchAIResponse} saveConvo={saveConvo}
               feedRef={feedRef} setFeedRef={setFeedRef} addFeedback={addFeedback}
+              search={search} setSearch={setSearch} formRef={formRef} textRef={textRef}
               />
           </Stack>
 
