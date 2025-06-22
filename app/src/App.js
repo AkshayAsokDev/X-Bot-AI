@@ -288,7 +288,11 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const [currentConvo, setCurrentConvo] = useState([]);
-  const [convoList, setConvoList] = useState([]);
+  const [convoList, setConvoList] = useState(() => {
+    const temp = localStorage.getItem("conversation");
+
+    return temp ? JSON.parse(temp) : []
+  });
   const [feedList, setFeedList] = useState({});
 
   // for auto scroll
@@ -354,6 +358,13 @@ function App() {
 
   }
 
+  const saveConvo = () => {
+
+    setConvoList([...convoList, currentConvo]);
+
+  }
+  console.log("convo list >> ", convoList);
+
   //use effect to fetch the AI response 
   useEffect(() => {
 
@@ -371,6 +382,12 @@ function App() {
 
   }, [currentConvo])
 
+  
+  //use effect to save the convo list in local storage
+  useEffect(() => {
+
+    localStorage.setItem("conversation", JSON.stringify(convoList));
+  }, [convoList])
 
   return (
     <div className="App">
@@ -386,7 +403,7 @@ function App() {
           >
               <Outlet context={outletData} />
               <Searchbar 
-              addChat={addChat} fetchAIResponse={fetchAIResponse}
+              addChat={addChat} fetchAIResponse={fetchAIResponse} saveConvo={saveConvo}
               />
           </Stack>
 
