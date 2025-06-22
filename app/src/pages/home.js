@@ -2,7 +2,7 @@ import { Box, Typography, IconButton, Stack } from "@mui/material"
 import MenuIcon from "@mui/icons-material/Menu";
 import { useOutletContext } from "react-router-dom";
 import ChatCard from "../components/ChatCard/ChatCard";
-
+import Welcome from "../components/Welcome/Welcome";
 
 const dummyData = {
     type: "chat",
@@ -67,7 +67,15 @@ export default function ChatWindow() {
             }}
             >
 
+                {/* if convo empty, then welcome */}
+                {
+                    (currentConvo.length > 0) || (
+                        <Welcome />
+                    )
+                }
 
+
+                {/* Convo chats */}
                 {
                     currentConvo.map((convo, index) => <ChatCard key={index} type="chat" isUser={convo.isUser} time={convo.time} content={convo.content} />)
                 }
