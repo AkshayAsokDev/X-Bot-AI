@@ -25,7 +25,7 @@ export default function HistoryCard ({data, feedIndex}) {
 
                     return <ChatCard 
                     key={index}
-                    type={chat.type} isUser={chat.isUser} time={chat.time} content={chat.content} />
+                    type="history" isUser={chat.isUser} time={chat.time} content={chat.content} />
                 })
             }
 

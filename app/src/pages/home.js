@@ -14,7 +14,7 @@ const dummyData = {
 // AI Chat
 export default function ChatWindow() {
 
-    const { isMobile, setMenuOpen } = useOutletContext();
+    const { isMobile, setMenuOpen, currentConvo, bottomRef } = useOutletContext();
     
     
 
@@ -58,14 +58,19 @@ export default function ChatWindow() {
             <Box
             sx={{
                 flexGrow: 1,
+                overflowY: "auto",
+                display: "flex",
+                flexDirection: "column",
+                height: "75vh"
             }}
             >
-                {/* <ChatCard 
-                type={dummyData.type}
-                isUser={dummyData.isUser}
-                time={dummyData.time}
-                content={dummyData.content}
-                /> */}
+
+
+                {
+                    currentConvo.map((convo, index) => <ChatCard key={index} type="chat" isUser={convo.isUser} time={convo.time} content={convo.content} />)
+                }
+
+                <div ref={bottomRef} ></div>
             </Box>
             
         </Box>
