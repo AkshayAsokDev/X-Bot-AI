@@ -44,12 +44,14 @@ export default function ChatWindow() {
                     )
                 }
                 
-                <Typography
-                variant="h1"
-                fontSize="3rem"
-                fontWeight="700"
-                color="primary"
-                >Bot AI</Typography>
+                <header>
+                    <Typography
+                    variant="h1"
+                    fontSize="3rem"
+                    fontWeight="700"
+                    color="primary"
+                    >Bot AI</Typography>
+                </header>
 
                 
 
