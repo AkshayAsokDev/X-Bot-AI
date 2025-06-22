@@ -33,7 +33,7 @@ const dummyConvoHistory = [
 
 export default function ConversationHistory() {
 
-    const { isMobile, setMenuOpen } = useOutletContext();
+    const { isMobile, setMenuOpen, convoList } = useOutletContext();
 
     return (
         <Box
@@ -83,7 +83,7 @@ export default function ConversationHistory() {
 
                 {/* conversation chats */}
                 {
-                    dummyConvoHistory.map((item, index) => {
+                    convoList.map((item, index) => {
 
                         return <HistoryCard data={item} key={index} feedIndex={index} />
                     })

@@ -6,7 +6,7 @@ import { useOutletContext } from "react-router-dom";
 
 import FeedbackModal from "../FeedbackModal/FeedbackModal";
 
-export default function Searchbar({addChat, fetchAIResponse}) {
+export default function Searchbar({addChat, fetchAIResponse, saveConvo}) {
 
     const [isOpen, setIsOpen] = useState(false);
     const [search, setSearch] = useState("");
@@ -27,6 +27,8 @@ export default function Searchbar({addChat, fetchAIResponse}) {
 
         // fetchAIResponse(e.target.elements.search.value);
     }
+
+    
 
     return (
         <Box
@@ -69,6 +71,7 @@ export default function Searchbar({addChat, fetchAIResponse}) {
                     fontSize: "1.5rem"
                 }}
                 onClick={() => {
+                    saveConvo();
                     setIsOpen(true);
                 }}
                 >Save</Button>
